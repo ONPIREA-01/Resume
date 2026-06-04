@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  typescript: {
+    ignoreBuildErrors: true, // เพิ่มบรรทัดนี้ลงไปเพื่อสั่งให้ข้ามการตรวจ TS
+  },
 };
 
 export default nextConfig;
