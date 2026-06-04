@@ -9,7 +9,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("ABOUT");
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const handleTabChange = (tab) => {
+  const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     setSelectedCard(null);
   };
