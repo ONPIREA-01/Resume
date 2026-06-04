@@ -7,7 +7,7 @@ import "../app/globals.css";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("ABOUT");
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState<any>(null);
 
   const handleTabChange = (tab: any) => {
     setActiveTab(tab);
