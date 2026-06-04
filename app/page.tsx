@@ -151,7 +151,7 @@ export default function Home() {
             {/* เรียกใช้ class .clip-profile ที่เราสร้างไว้ในไฟล์ css แทน */}
             <div className="relative w-full h-[400px] bg-gray-200 overflow-hidden group clip-profile">
               <div className="w-full h-full bg-slate-300 flex items-center justify-center text-slate-500">
-                <img src="/images/me.png" alt="Profile Picture" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/images/" alt="Profile Picture" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
 
