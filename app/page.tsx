@@ -5,19 +5,14 @@ import "../app/globals.css";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("ABOUT");
-  // เก็บ ID ของผลงานที่เลือกดูรายละเอียดในหน้า Portfolio
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
-
-  // State สำหรับสลับภาษา EN / TH
   const [lang, setLang] = useState<"EN" | "TH">("EN");
 
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
-    setSelectedProjectId(null); // รีเซ็ตการ์ดเมื่อเปลี่ยนแท็บ
+    setSelectedProjectId(null);
   };
 
-  // คลังข้อมูลสำหรับ 2 ภาษา (แยก Works และ Portfolio ออกจากกัน)
-  // คลังข้อมูลสำหรับ 2 ภาษา (แยก Works และ Portfolio ออกจากกัน)
   const content = {
     EN: {
       nav: { ABOUT: "ABOUT", PORTFOLIO: "PORTFOLIO", WORKS: "WORKS", BLOG: "BLOG", CONTACT: "CONTACT" },
@@ -44,8 +39,7 @@ export default function Home() {
       viewProject: "View Project",
       comingSoon: "Coming Soon...",
       comingSoonDesc: "This section is currently under construction.",
-
-      // ข้อมูลแท็บ WORKS (รูปแบบ Timeline)
+      
       works: [
         {
           id: 1,
@@ -87,7 +81,6 @@ export default function Home() {
         }
       ],
 
-      // ข้อมูลแท็บ PORTFOLIO (รูปแบบ Grid)
       portfolio: [
         {
           id: 101,
@@ -306,16 +299,23 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-gray-800 whitespace-nowrap animate-slide-up" style={{ animationDelay: "0.2s" }}>Pannathon Sekegul</h1>
               <p className="text-green-500 font-medium mt-2 whitespace-nowrap animate-slide-up" style={{ animationDelay: "0.3s" }}>{t.role}</p>
 
+              {/* ===== ไอคอน Social Media (กดไปได้จริง) ===== */}
               <div className="flex gap-5 mt-6 text-gray-500 animate-slide-up" style={{ animationDelay: "0.4s" }}>
-                <span className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
+                
+                {/* Facebook */}
+                <a href="https://www.facebook.com/pannathorn.sekagun" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
-                </span>
-                <span className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
+                </a>
+                
+                {/* Instagram */}
+                <a href="https://www.instagram.com/onpirea/" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
-                </span>
-                <span className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
+                </a>
+                
+                {/* GitHub */}
+                <a href="https://github.com/ONPIREA-01" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                </span>
+                </a>
               </div>
             </div>
 
